@@ -7,6 +7,7 @@ import { Check, ExternalLink } from "lucide-react";
 import { FaGithub } from "react-icons/fa6";
 import { Button } from "@/components/ui/button";
 import { Tag } from "@/components/shared/tag";
+import { ArchitectureDiagram } from "@/components/shared/architecture-diagram";
 import { EASE_OUT } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 import type { Project } from "@/types";
@@ -105,6 +106,8 @@ export function CaseStudy({ project, index }: { project: Project; index: number 
             </motion.div>
           )}
         </div>
+        {project.note && <p className="mt-3 text-xs italic text-fg-subtle">{project.note}</p>}
+        {project.diagram && <ArchitectureDiagram />}
       </motion.div>
 
       {/* Story */}

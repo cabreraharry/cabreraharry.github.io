@@ -43,6 +43,10 @@ export interface Project {
   /** `null` when there is no public live demo. */
   liveUrl: string | null;
   featured: boolean;
+  /** Small print shown under the screenshots (e.g. why they are blurred). */
+  note?: string;
+  /** Show the "how it's built" architecture diagram under the screenshots. */
+  diagram?: boolean;
 }
 
 /** Minimal shape for the "future work" teaser cards. */
