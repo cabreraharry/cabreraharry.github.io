@@ -75,7 +75,7 @@ export function CaseStudy({ project, index }: { project: Project; index: number 
   const phone = project.images.find(isPhoneShot);
 
   return (
-    <article className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-14 [&>*]:min-w-0">
+    <article className="grid grid-cols-1 items-center gap-10 overflow-x-clip lg:grid-cols-12 lg:gap-14 [&>*]:min-w-0">
       {/* Media */}
       <motion.div
         initial={{ opacity: 0, x: flip ? 60 : -60 }}
