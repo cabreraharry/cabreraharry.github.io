@@ -6,6 +6,7 @@ import { ArrowUp } from "lucide-react";
 import { navLinks } from "@/data/nav-links";
 import { siteConfig } from "@/config/site";
 import { SocialRow } from "@/components/shared/social-row";
+import { EmailLink } from "@/components/shared/email-link";
 
 export function Footer() {
   const lenis = useLenis();
@@ -68,6 +69,7 @@ export function Footer() {
           {/* Socials */}
           <div className="flex flex-col gap-4 md:items-end">
             <h2 className="eyebrow">Connect</h2>
+            <EmailLink />
             <SocialRow />
           </div>
         </div>

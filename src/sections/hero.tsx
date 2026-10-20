@@ -8,6 +8,8 @@ import { Button } from "@/components/ui/button";
 import { SocialRow } from "@/components/shared/social-row";
 import { HeroShowcase } from "@/components/shared/hero-showcase";
 import { CountUpStats, type Stat } from "@/components/shared/count-up-stats";
+import { TypingRoles } from "@/components/shared/typing-roles";
+import { EmailLink } from "@/components/shared/email-link";
 import { siteConfig } from "@/config/site";
 import { fadeUp, staggerContainer } from "@/lib/motion";
 
@@ -62,7 +64,7 @@ export function HeroSection() {
             className="text-balance text-[2.6rem] font-bold leading-[1.04] tracking-tight text-fg-strong sm:text-6xl xl:text-7xl"
           >
             Harry Cabrera
-            <span className="block font-light italic text-gold">WordPress &amp; Web Developer</span>
+            <TypingRoles roles={siteConfig.heroRoles} className="whitespace-nowrap pt-1 text-[0.72em] font-light italic leading-tight" />
           </motion.h1>
 
           <motion.p
@@ -93,8 +95,9 @@ export function HeroSection() {
             </Button>
           </motion.div>
 
-          <motion.div variants={fadeUp}>
+          <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-x-5 gap-y-3">
             <SocialRow />
+            <EmailLink />
           </motion.div>
 
           <motion.div variants={fadeUp}>

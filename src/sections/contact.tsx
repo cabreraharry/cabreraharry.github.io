@@ -1,9 +1,10 @@
-import { Calendar, Download, Mail } from "lucide-react";
+import { Calendar, Download } from "lucide-react";
 import { SectionShell } from "@/components/shared/section-shell";
 import { GlassCard } from "@/components/shared/glass-card";
 import { Reveal } from "@/components/shared/motion-primitives";
 import { ContactForm } from "@/components/shared/contact-form";
 import { SocialRow } from "@/components/shared/social-row";
+import { EmailLink } from "@/components/shared/email-link";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
 
@@ -22,13 +23,7 @@ export function ContactSection() {
               <p className="text-sm text-fg-muted">
                 Prefer email or socials? Reach me directly:
               </p>
-              <a
-                href={`mailto:${siteConfig.email}`}
-                className="inline-flex w-fit items-center gap-2 text-fg transition-colors hover:text-primary-400"
-              >
-                <Mail className="size-4 text-primary-400" />
-                {siteConfig.email}
-              </a>
+              <EmailLink size="lg" />
               <SocialRow />
             </div>
 

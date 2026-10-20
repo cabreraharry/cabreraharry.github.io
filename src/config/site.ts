@@ -17,14 +17,13 @@ export const siteConfig = {
     "write software in Python, PHP, Rust and Flutter, and connect AI to the tools a business already uses.",
   usp: "WordPress and full-stack developer and AI engineer who builds websites, software and AI integrations that hold up in real business use.",
 
-  // Hero terminal — cycles after `harry@portfolio:~$ whoami`
-  terminalRoles: [
+  // Hero headline: typed one after another under the name (first = what clients hire me for).
+  heroRoles: [
     "WordPress Developer",
-    "Full-Stack Developer",
+    "Web Developer",
     "AI Engineer",
-    "Prompt Engineer",
     "Landing Page Builder",
-    "Flutter & Python Developer",
+    "Flutter Developer",
   ],
 
   // Hero availability pill
