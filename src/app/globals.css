@@ -1,0 +1,348 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/*
+ * Harry Cabrera — Portfolio design system
+ * Black & gold, the same family as the landing pages Harry built (Bayit Properties,
+ * Rentals, Israel Projects): near-black #050505, metallic gold #BF953F → #FCF6BA → #B38728,
+ * Outfit for headings and Inter for text. Dark only.
+ *   - gold button fills (#D4AF37) carry near-black text
+ *   - gold TEXT on black uses #E3C26A (primary-400)
+ */
+
+@theme {
+  /* ---- Background depth ladder ---- */
+  --color-base: #050505;
+  --color-subtle: #0a0a0b;
+  --color-elevated: #0f0f11;
+  --color-overlay: #141416;
+  --color-inset: #030303;
+
+  /* ---- Surface fills (solid, no frosted glass) ---- */
+  --color-glass: #0d0d0f;
+  --color-glass-strong: #141416;
+
+  /* ---- Borders ---- */
+  --color-border: rgba(255, 255, 255, 0.09);
+  --color-border-subtle: rgba(255, 255, 255, 0.06);
+  --color-border-strong: rgba(255, 255, 255, 0.16);
+  --color-border-accent: rgba(212, 175, 55, 0.5);
+
+  /* ---- Foreground / text ---- */
+  --color-fg: #e7e7e7;
+  --color-fg-strong: #ffffff;
+  --color-fg-muted: #a3a3a3;
+  --color-fg-subtle: #767676;
+  --color-fg-disabled: #525252;
+
+  /* ---- Primary (gold) ---- */
+  --color-primary-400: #e3c26a;
+  --color-primary: #d4af37;
+  --color-primary-strong: #d4af37;
+  --color-primary-hover: #e2c158;
+  --color-primary-fg: #0a0a0a;
+  --color-primary-soft: rgba(212, 175, 55, 0.12);
+
+  /* ---- Secondary (bronze) ---- */
+  --color-secondary-400: #c9a96b;
+  --color-secondary: #b38728;
+  --color-secondary-strong: #9a7420;
+  --color-secondary-hover: #a67c23;
+  --color-secondary-soft: rgba(179, 135, 40, 0.12);
+
+  /* ---- Semantic ---- */
+  --color-success: #4ade80;
+  --color-success-soft: rgba(74, 222, 128, 0.12);
+  --color-warning: #f59e0b;
+  --color-warning-soft: rgba(245, 158, 11, 0.12);
+  --color-error: #f87171;
+  --color-error-soft: rgba(248, 113, 113, 0.12);
+  --color-info: #e3c26a;
+  --color-info-soft: rgba(227, 194, 106, 0.12);
+
+  /* ---- Metallic gold stops (as on the landing pages) ---- */
+  --color-grad-from: #bf953f;
+  --color-grad-via: #fcf6ba;
+  --color-grad-to: #b38728;
+
+  /* ---- Radius: tighter than a template, closer to the landing pages ---- */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 18px;
+
+  /* ---- Animations ---- */
+  --animate-blink: blink 1s step-end infinite;
+  --animate-marquee: marquee var(--marquee-duration, 60s) linear infinite;
+  --animate-marquee-reverse: marquee var(--marquee-duration, 60s) linear infinite reverse;
+}
+
+/* next/font variables resolved at runtime */
+@theme inline {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-outfit), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, "SFMono-Regular", monospace;
+}
+
+:root {
+  color-scheme: dark;
+
+  --shadow-ambient-sm: 0 1px 2px rgba(0, 0, 0, 0.5);
+  --shadow-ambient-md: 0 10px 30px -12px rgba(0, 0, 0, 0.7);
+  --shadow-ambient-lg: 0 28px 70px -20px rgba(0, 0, 0, 0.85);
+  --inner-highlight: inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+  --glow-primary: 0 0 0 1px rgba(212, 175, 55, 0.45), 0 10px 34px -10px rgba(212, 175, 55, 0.55);
+  --glow-primary-strong: 0 0 0 1px rgba(212, 175, 55, 0.6), 0 14px 48px -10px rgba(212, 175, 55, 0.6);
+  --glow-secondary: 0 0 0 1px rgba(179, 135, 40, 0.45), 0 10px 34px -10px rgba(179, 135, 40, 0.5);
+  --gold-metal: linear-gradient(100deg, #bf953f 0%, #fcf6ba 38%, #b38728 62%, #fbf5b7 82%, #aa771c 100%);
+
+  /* Sticky-nav height — shared by scroll-padding + scroll-spy offset. */
+  --nav-height: 4.5rem;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--nav-height);
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-base);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+
+  ::selection {
+    background: rgba(212, 175, 55, 0.3);
+    color: #ffffff;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-inset);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #2a2a2a;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #8a6d2a;
+  }
+
+  /* Global reduced-motion safety net. */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* ---- Surfaces: solid panels with a hairline border ---- */
+  .glass {
+    background: var(--color-elevated);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--inner-highlight);
+    border-radius: var(--radius-lg);
+  }
+  /* The floating navbar is the one place that stays translucent. */
+  .glass-strong {
+    background: rgba(8, 8, 9, 0.82);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-ambient-lg);
+  }
+
+  /* ---- Page background: flat black, one faint warm light at the top ---- */
+  .aurora-bg {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-color: var(--color-base);
+    background-image: radial-gradient(70rem 32rem at 78% -12%, rgba(212, 175, 55, 0.075), transparent 70%);
+  }
+  .aurora-grain {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.03;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* ---- Metallic gold text & borders ---- */
+  .text-gradient,
+  .text-gold {
+    background: var(--gold-metal);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .border-gradient {
+    position: relative;
+  }
+  .border-gradient::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: inherit;
+    background: var(--gold-metal);
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+  .rule-gold {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.55), transparent);
+  }
+
+  /* ---- Cursor spotlight (driven by --mx / --my) ---- */
+  .spotlight {
+    position: relative;
+    isolation: isolate;
+  }
+  .spotlight::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    z-index: 0;
+    background: radial-gradient(
+      18rem 18rem at var(--mx, 50%) var(--my, 50%),
+      rgba(212, 175, 55, 0.08),
+      transparent 65%
+    );
+    opacity: 0;
+    transition: opacity 250ms ease;
+    pointer-events: none;
+  }
+  .spotlight:hover::before {
+    opacity: 1;
+  }
+  @media (prefers-reduced-motion: reduce), (hover: none) {
+    .spotlight::before {
+      display: none;
+    }
+  }
+
+  /* ---- Typographic helpers ---- */
+  /* Small gold pill label, as on the landing pages ("KOSHER HOMES · SOUTH FLORIDA"). */
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: fit-content;
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    border-radius: 9999px;
+    background: rgba(212, 175, 55, 0.06);
+    padding: 0.3rem 0.85rem;
+    font-family: var(--font-sans);
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-primary-400);
+  }
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    border-radius: var(--radius-xs);
+    border: 1px solid var(--color-border);
+    background: rgba(255, 255, 255, 0.03);
+    padding: 0.25rem 0.6rem;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    color: var(--color-fg-muted);
+    white-space: nowrap;
+  }
+
+  /* ---- Marquee rows (design gallery) ---- */
+  .marquee {
+    display: flex;
+    width: max-content;
+    animation: var(--animate-marquee);
+  }
+  .marquee-reverse {
+    display: flex;
+    width: max-content;
+    animation: var(--animate-marquee-reverse);
+  }
+  .marquee-track:hover .marquee,
+  .marquee-track:hover .marquee-reverse,
+  .marquee-track:focus-within .marquee,
+  .marquee-track:focus-within .marquee-reverse {
+    animation-play-state: paused;
+  }
+  .marquee-mask {
+    mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  }
+}
+
+@layer utilities {
+  .container-page {
+    margin-inline: auto;
+    width: 100%;
+    max-width: 80rem;
+    padding-inline: clamp(1rem, 5vw, 2rem);
+  }
+  .section-y {
+    padding-block: clamp(4rem, 9vw, 7.5rem);
+  }
+}

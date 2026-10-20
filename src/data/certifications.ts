@@ -1,0 +1,73 @@
+import type { CertCategoryTarget, Certification } from "@/types";
+
+/** Newest first. Images are rendered from the originals in OneDrive\Documents\CERTIFICATES. */
+export const certifications: Certification[] = [
+  {
+    id: "cisco-python-essentials-1",
+    title: "Python Essentials 1",
+    issuer: "Cisco Networking Academy · OpenEDG Python Institute",
+    category: "Development",
+    date: "May 2025",
+    credentialId: "",
+    verifyUrl: "",
+    logo: "",
+    image: "/images/certs/cisco-python-essentials-1.webp",
+  },
+  {
+    id: "gohighlevel-freelancers",
+    title: "GoHighLevel Course for Freelancers",
+    issuer: "Koya RJ · Technical Virtual Assistants",
+    category: "AI & Automation",
+    date: "May 2025",
+    credentialId: "",
+    verifyUrl: "",
+    logo: "",
+    image: "/images/certs/gohighlevel-freelancers.webp",
+  },
+  {
+    id: "make-basics",
+    title: "Make Basics",
+    issuer: "Make Academy",
+    category: "AI & Automation",
+    date: "Jan 2025",
+    credentialId: "",
+    verifyUrl: "",
+    logo: "",
+    image: "/images/certs/make-basics.webp",
+  },
+  {
+    id: "make-foundation",
+    title: "Make Foundation",
+    issuer: "Make Academy",
+    category: "AI & Automation",
+    date: "Jan 2025",
+    credentialId: "",
+    verifyUrl: "",
+    logo: "",
+    image: "/images/certs/make-foundation.webp",
+  },
+  {
+    id: "xaltius-web-dev-101",
+    title: "Web Development 101: Building Your First Front-End",
+    issuer: "Xaltius Academy (workshop)",
+    category: "Development",
+    date: "Jan 2024",
+    credentialId: "L9M4BWBVDC",
+    verifyUrl: "https://truecertificates.com/verified/L9M4BWBVDC",
+    logo: "",
+    image: "/images/certs/xaltius-web-dev-101.webp",
+  },
+  {
+    id: "freecodecamp-data-analysis-python",
+    title: "Data Analysis with Python",
+    issuer: "freeCodeCamp · about 300 hours",
+    category: "Development",
+    date: "Dec 2023",
+    credentialId: "",
+    verifyUrl: "https://www.freecodecamp.org/certification/harry_cabrera/data-analysis-with-python-v7",
+    logo: "",
+    image: "/images/certs/freecodecamp-data-analysis-python.webp",
+  },
+];
+
+export const certCategories: CertCategoryTarget[] = [];
