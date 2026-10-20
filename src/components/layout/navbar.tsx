@@ -70,7 +70,7 @@ export function Navbar() {
           </a>
 
           {/* Desktop links */}
-          <ul className="hidden items-center gap-0.5 md:flex">
+          <ul className="hidden items-center gap-0.5 lg:flex">
             {navLinks.map((link) => {
               const id = link.href.replace("#", "");
               const isActive = active === id;
@@ -100,7 +100,7 @@ export function Navbar() {
           </ul>
 
           {/* Desktop CTAs */}
-          <div className="hidden items-center gap-2 md:flex">
+          <div className="hidden items-center gap-2 lg:flex">
             <Button asChild variant="ghost" size="sm">
               <a href={siteConfig.resumeUrl} target="_blank" rel="noopener noreferrer">
                 Resume
@@ -116,14 +116,14 @@ export function Navbar() {
           {/* Mobile menu */}
           <DialogPrimitive.Root open={mobileOpen} onOpenChange={setMobileOpen}>
             <DialogPrimitive.Trigger
-              className="flex size-10 items-center justify-center rounded-md text-fg md:hidden"
+              className="flex size-10 items-center justify-center rounded-md text-fg lg:hidden"
               aria-label="Open menu"
             >
               <Menu className="size-6" />
             </DialogPrimitive.Trigger>
             <DialogPrimitive.Portal>
-              <DialogPrimitive.Overlay className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0 md:hidden" />
-              <DialogPrimitive.Content className="glass-strong fixed inset-y-0 right-0 z-50 flex w-[82%] max-w-sm flex-col gap-2 p-6 shadow-[var(--shadow-ambient-lg)] data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:slide-in-from-right data-[state=closed]:slide-out-to-right md:hidden">
+              <DialogPrimitive.Overlay className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0 lg:hidden" />
+              <DialogPrimitive.Content className="glass-strong fixed inset-y-0 right-0 z-50 flex w-[82%] max-w-sm flex-col gap-2 p-6 shadow-[var(--shadow-ambient-lg)] data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:slide-in-from-right data-[state=closed]:slide-out-to-right lg:hidden">
                 <div className="mb-4 flex items-center justify-between">
                   <DialogPrimitive.Title className="font-display text-lg font-semibold tracking-wide text-fg-strong">
                     Harry <span className="font-light italic text-gold">Cabrera</span>

@@ -125,6 +125,18 @@
     border-color: var(--color-border);
   }
 
+  /* Big monitors: scale the whole rem-based layout up so it doesn't sit small in the middle. */
+  @media (min-width: 1800px) {
+    html {
+      font-size: 112.5%;
+    }
+  }
+  @media (min-width: 2400px) {
+    html {
+      font-size: 125%;
+    }
+  }
+
   html {
     scroll-behavior: smooth;
     scroll-padding-top: var(--nav-height);
@@ -132,6 +144,9 @@
   }
 
   body {
+    /* Slide-in animations start off to the side; clip them so phones never widen
+       (zoom out) the page. `clip` keeps position: sticky working, unlike `hidden`. */
+    overflow-x: clip;
     background-color: var(--color-base);
     color: var(--color-fg);
     font-family: var(--font-sans);
