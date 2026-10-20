@@ -30,7 +30,7 @@ export function ProjectsSection() {
           Things I&apos;ve built, <span className="font-light italic text-gold">live and in use.</span>
         </>
       }
-      intro="Every project here is real: live sites you can open, the WordPress site I looked after, and the software, mobile and AI work behind them."
+      intro="Every project here is real: live sites you can open, the WordPress site I develop and maintain, and the software, mobile and AI work behind them."
     >
       <div className="flex flex-col gap-24 lg:gap-32">
         {featured.map((project, i) => (

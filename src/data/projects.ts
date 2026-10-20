@@ -107,11 +107,12 @@ export const projects: Project[] = [
     slug: "usprimerealty-wordpress",
     name: "usprimerealty.com — WordPress",
     shortDescription:
-      "Maintenance, migration, accessibility and SEO for a real estate brokerage's WordPress website.",
+      "A real estate brokerage's WordPress website: one of its main developers, and I maintain it: design, back end, migration, accessibility and SEO.",
     longDescription:
-      "Looked after the brokerage's WordPress site day to day: theme and plugin updates, troubleshooting and custom code in a child theme and WPCode. Migrated the whole site from cPanel to Hostinger with all 54 DNS records and email authentication intact, raised the accessibility score to 99 on mobile, and converted 445 FAQ questions on 30 Elementor pages into proper headings with FAQ schema.",
+      "One of the main developers of usprimerealty.com, which I also maintain: I designed its pages in Elementor on the Real Estate 7 theme and built parts of the back end, then kept it running day to day with theme and plugin updates, troubleshooting and custom code in a child theme and WPCode. Migrated the whole site from cPanel to Hostinger with all 54 DNS records and email authentication intact, raised the accessibility score to 99 on mobile, and converted 445 FAQ questions on 30 Elementor pages into proper headings with FAQ schema.",
     tech: ["WordPress", "PHP", "Elementor", "Rank Math", "LiteSpeed Cache", "Hostinger"],
     features: [
+      "Page design in Elementor and parts of the back end",
       "Full site migration from cPanel to Hostinger, DNS and email included",
       "Accessibility 99 (mobile) / 91 (desktop); WCAG failures 37 → 11",
       "445 FAQ questions on 30 pages converted to H3 headings with schema",

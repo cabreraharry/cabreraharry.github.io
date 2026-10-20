@@ -14,9 +14,9 @@ export default function Home() {
   return (
     <>
       <HeroSection />
+      <AboutSection />
       <ProjectsSection />
       <GallerySection />
-      <AboutSection />
       <SkillsSection />
       <ExperienceSection />
       {siteConfig.showServices && <ServicesSection />}

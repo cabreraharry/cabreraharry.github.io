@@ -7,9 +7,10 @@ export const experience: ExperienceItem[] = [
     org: "U.S. Prime Realty LLC · Florida, USA (remote)",
     period: "2025 – 2026",
     summary:
-      "Looked after the brokerage's WordPress website and built its landing pages, funnels and AI tools.",
+      "One of the main developers of the brokerage's WordPress website, which I also maintain, and builder of its landing pages, funnels and AI tools.",
     highlights: [
-      "Maintained usprimerealty.com: Real Estate 7 child theme, Elementor, Rank Math, LiteSpeed Cache, WPCode",
+      "One of the main developers of usprimerealty.com: page design in Elementor on the Real Estate 7 theme, parts of the back end",
+      "Maintain it day to day: child theme, Rank Math, LiteSpeed Cache, WPCode, plugin and theme updates",
       "Migrated the full WordPress site from cPanel to Hostinger; rebuilt 54 DNS records and fixed SPF, DKIM and DMARC",
       "Raised the PageSpeed accessibility score to 99 (mobile) / 91 (desktop); WCAG failures down from 37 to 11",
       "Built and published 25 SEO blog posts with FAQ schema; wrote a PHP must-use plugin for the schema",

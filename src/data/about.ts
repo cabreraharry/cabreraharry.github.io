@@ -7,7 +7,7 @@ export interface QuickFact {
 
 export const aboutNarrative: string[] = [
   "I'm a developer from Palawan, Philippines, with a BS in Computer Science from Palawan State University (2025). Most of what I know I learned by building things that had to work for a real business, on a real deadline, for people in other time zones.",
-  "For almost two years I've looked after a live WordPress site for a U.S. real estate brokerage: updates, troubleshooting, custom PHP, SEO and accessibility. I moved the whole site to a new host, raised its accessibility score to 99 on mobile, published 25 SEO blog posts, and hand-coded landing pages and a full project website from scratch.",
+  "I'm one of the main developers of usprimerealty.com, the WordPress website of a U.S. real estate brokerage, and I maintain it: I designed its pages, built parts of the back end, and have kept it running for almost two years with updates, troubleshooting, custom PHP, SEO and accessibility work. I moved the whole site to a new host, raised its accessibility score to 99 on mobile, published 25 SEO blog posts, and hand-coded landing pages and a full project website from scratch.",
   "Beyond WordPress, I build desktop software in Python, Rust and React, worked on a Flutter marketplace app with a Laravel back end, and use AI every day: I build chatbots and voice agents, connect AI assistants to business tools through MCP, and write and test the prompts behind them.",
 ];
 

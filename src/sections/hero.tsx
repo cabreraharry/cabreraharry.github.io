@@ -111,9 +111,9 @@ export function HeroSection() {
 
       {/* Scroll hint */}
       <motion.a
-        href="#projects"
-        onClick={(e) => handleNav(e, "#projects")}
-        aria-label="Scroll to my work"
+        href="#about"
+        onClick={(e) => handleNav(e, "#about")}
+        aria-label="Scroll to About"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2 }}
