@@ -17,6 +17,16 @@ export interface KeywordMove {
   page: string;
   before: { position: number; month: string };
   after: { position: number; month: string };
+  /** The top position comes from Google's AI answer, not the blue links (checked live 22 Oct 2026). */
+  aiAnswer?: boolean;
+}
+
+export interface ProofShot {
+  src: string;
+  alt: string;
+  caption: string;
+  width: number;
+  height: number;
 }
 
 export interface MonthPoint {
@@ -58,6 +68,7 @@ export const seoKeywords: KeywordMove[] = [
     page: "Cape Coral canal map blog post",
     before: { position: 5.6, month: "Feb 2026" },
     after: { position: 1.4, month: "Sep 2026" },
+    aiAnswer: true,
   },
   {
     keyword: "Florida tax-benefit questions (150+ wordings)",
@@ -116,7 +127,40 @@ export const seoWork: { title: string; points: string[] }[] = [
     title: "AEO for AI answers",
     points: [
       "Turned 445 FAQ questions on 30 pages into real headings with FAQPage schema: clear questions and answers that AI tools can pick up",
+      "231 of the site's pages have appeared in Google's AI answers, 2,330 times since May 2026",
       "Track visits from AI assistants such as ChatGPT in Google Analytics: 2 in June, 15 in September 2026",
     ],
+  },
+];
+
+/** Screenshots taken 22 Oct 2026 from the live tools (usprimerealty.com's own accounts). */
+export const seoProof: ProofShot[] = [
+  {
+    src: "/images/seo/gsc-impressions-16-months.webp",
+    alt: "Google Search Console performance report for usprimerealty.com, 16 months, impressions rising from almost zero in October 2025",
+    caption: "Google Search Console, last 16 months: 146K impressions, from almost nothing in October 2025.",
+    width: 1030,
+    height: 580,
+  },
+  {
+    src: "/images/seo/gsc-ai-features.webp",
+    alt: "Search Console Generative AI features report showing 2.33K impressions since May 2026",
+    caption: "Google's AI answers (AI Overviews and AI Mode): the site appeared 2,330 times since May 2026.",
+    width: 1030,
+    height: 570,
+  },
+  {
+    src: "/images/seo/gsc-ai-features-pages.webp",
+    alt: "Top pages in Google's AI answers: homepage 468, Cape Coral canal map 369, property value in Cape Coral 227, Naples cost of living 101",
+    caption: "The pages Google's AI answers use most: the canal map guide, Cape Coral values, Naples cost of living.",
+    width: 1030,
+    height: 552,
+  },
+  {
+    src: "/images/seo/rich-results-test.webp",
+    alt: "Google Rich Results Test for a usprimerealty.com page: 3 valid items detected, Articles, Local businesses and Organization",
+    caption: "Google's Rich Results Test: valid structured data (article, local business, organization).",
+    width: 914,
+    height: 606,
   },
 ];

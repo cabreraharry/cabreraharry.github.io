@@ -1,14 +1,19 @@
-import { ArrowRight } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight, Expand } from "lucide-react";
 import { SectionShell } from "@/components/shared/section-shell";
 import { GlassCard } from "@/components/shared/glass-card";
 import { CountUp } from "@/components/shared/count-up-stats";
 import { KeywordChart } from "@/components/shared/keyword-chart";
 import { Reveal, Stagger, StaggerItem } from "@/components/shared/motion-primitives";
-import { seoHeadline, seoKeywords, seoMonthly, seoPeriod, seoWork } from "@/data/seo-results";
+import { seoHeadline, seoKeywords, seoMonthly, seoPeriod, seoProof, seoWork } from "@/data/seo-results";
+import type { KeywordMove } from "@/data/seo-results";
 
 const pageOf = (position: number) => Math.max(1, Math.ceil(position / 10));
 
-function PageMove({ before, after }: { before: number; after: number }) {
+function PageMove({ move }: { move: KeywordMove }) {
+  const before = move.before.position;
+  const after = move.after.position;
+  if (move.aiAnswer) return <span className="chip">In Google&apos;s AI answer</span>;
   if (after <= 3) return <span className="chip">Top of page 1</span>;
   return (
     <span className="chip">
@@ -61,7 +66,10 @@ export function SeoResultsSection() {
           <GlassCard className="flex h-full flex-col gap-4 p-5 md:p-6">
             <div className="flex flex-col gap-1">
               <h3 className="text-base font-semibold text-fg-strong">Keyword by keyword</h3>
-              <p className="text-xs text-fg-subtle">Average position that month. 1 is the top result.</p>
+              <p className="text-xs text-fg-subtle">
+                Average position that month in Search Console, which also counts Google&apos;s AI answers. 1 is the
+                top.
+              </p>
             </div>
             <ul className="flex flex-col divide-y divide-border-subtle">
               {seoKeywords.map((k) => (
@@ -76,7 +84,7 @@ export function SeoResultsSection() {
                       <ArrowRight className="size-3.5 text-primary-400" aria-label="to" />
                       <span className="font-semibold text-fg-strong">{k.after.position.toFixed(1)}</span>
                     </span>
-                    <PageMove before={k.before.position} after={k.after.position} />
+                    <PageMove move={k} />
                   </div>
                   <span className="text-xs text-fg-subtle">
                     {k.before.month} → {k.after.month} · {k.page}
@@ -86,6 +94,41 @@ export function SeoResultsSection() {
             </ul>
           </GlassCard>
         </Reveal>
+      </div>
+
+      {/* Proof: screenshots straight from the tools */}
+      <div className="mt-14">
+        <h3 className="mb-2 text-2xl font-semibold text-fg-strong">Screenshots, straight from the tools</h3>
+        <p className="mb-6 max-w-2xl text-sm text-fg-muted">
+          Taken on 22 October 2026 from the site&apos;s own Google accounts. Click one to see it full size.
+        </p>
+        <Stagger className="grid grid-cols-1 gap-5 md:grid-cols-2" stagger={0.07}>
+          {seoProof.map((shot) => (
+            <StaggerItem key={shot.src} className="min-w-0">
+              <figure className="flex flex-col gap-3">
+                <a
+                  href={shot.src}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative block overflow-hidden rounded-lg border border-border-strong bg-white shadow-[var(--shadow-ambient-md)]"
+                >
+                  <Image
+                    src={shot.src}
+                    alt={shot.alt}
+                    width={shot.width}
+                    height={shot.height}
+                    sizes="(max-width: 768px) 92vw, 45vw"
+                    className="block h-auto w-full transition-transform duration-500 group-hover:scale-[1.02]"
+                  />
+                  <span className="absolute right-2 top-2 flex items-center gap-1 rounded-md bg-black/70 px-2 py-1 text-[11px] text-white opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100">
+                    <Expand className="size-3" aria-hidden /> Full size
+                  </span>
+                </a>
+                <figcaption className="text-pretty text-sm text-fg-muted">{shot.caption}</figcaption>
+              </figure>
+            </StaggerItem>
+          ))}
+        </Stagger>
       </div>
 
       {/* How */}
