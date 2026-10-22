@@ -100,7 +100,7 @@ export function SeoResultsSection() {
       <div className="mt-14">
         <h3 className="mb-2 text-2xl font-semibold text-fg-strong">Screenshots, straight from the tools</h3>
         <p className="mb-6 max-w-2xl text-sm text-fg-muted">
-          Taken on 22 October 2026 from the site&apos;s own Google accounts. Click one to see it full size.
+          Taken on 22 October 2026 from the site&apos;s own Google and Bing accounts. Click one to see it full size.
         </p>
         <Stagger className="grid grid-cols-1 gap-5 md:grid-cols-2" stagger={0.07}>
           {seoProof.map((shot) => (

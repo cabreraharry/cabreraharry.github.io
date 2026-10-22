@@ -128,6 +128,7 @@ export const seoWork: { title: string; points: string[] }[] = [
     points: [
       "Turned 445 FAQ questions on 30 pages into real headings with FAQPage schema: clear questions and answers that AI tools can pick up",
       "231 of the site's pages have appeared in Google's AI answers, 2,330 times since May 2026",
+      "Microsoft Copilot cited the site 2,200 times in six months; the Florida tax benefits guide alone 676 times",
       "Track visits from AI assistants such as ChatGPT in Google Analytics: 2 in June, 15 in September 2026",
     ],
   },
@@ -155,6 +156,20 @@ export const seoProof: ProofShot[] = [
     caption: "The pages Google's AI answers use most: the canal map guide, Cape Coral values, Naples cost of living.",
     width: 1030,
     height: 552,
+  },
+  {
+    src: "/images/seo/bing-ai-citations-6-months.webp",
+    alt: "Bing Webmaster Tools AI Performance report, last 6 months: 2.2K citations from Microsoft Copilot and partners",
+    caption: "Bing's AI Performance report: Microsoft Copilot cited the site 2,200 times in the last six months.",
+    width: 1080,
+    height: 620,
+  },
+  {
+    src: "/images/seo/bing-ai-cited-pages.webp",
+    alt: "Pages Copilot cites most: Florida tax benefits guide 676, retirement communities in Cape Coral 299, top real estate companies in Florida 130",
+    caption: "The pages Copilot cites most: the Florida tax benefits guide (676), Cape Coral retirement communities (299).",
+    width: 1080,
+    height: 608,
   },
   {
     src: "/images/seo/rich-results-test.webp",
