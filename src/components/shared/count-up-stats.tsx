@@ -9,7 +9,7 @@ export interface Stat {
   label: string;
 }
 
-function CountUp({ value, suffix = "" }: { value: number; suffix?: string }) {
+export function CountUp({ value, suffix = "" }: { value: number; suffix?: string }) {
   const ref = React.useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.6 });
   const reduce = useReducedMotion();
@@ -27,7 +27,7 @@ function CountUp({ value, suffix = "" }: { value: number; suffix?: string }) {
 
   return (
     <span ref={ref} className="tabular-nums">
-      {shown}
+      {shown.toLocaleString("en-US")}
       {suffix}
     </span>
   );

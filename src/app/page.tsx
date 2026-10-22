@@ -3,6 +3,7 @@ import { AboutSection } from "@/sections/about";
 import { SkillsSection } from "@/sections/skills";
 import { ExperienceSection } from "@/sections/experience";
 import { ProjectsSection } from "@/sections/projects";
+import { SeoResultsSection } from "@/sections/seo-results";
 import { CertificationsSection } from "@/sections/certifications";
 import { EducationSection } from "@/sections/education";
 import { ServicesSection } from "@/sections/services";
@@ -16,6 +17,7 @@ export default function Home() {
       <HeroSection />
       <AboutSection />
       <ProjectsSection />
+      <SeoResultsSection />
       <GallerySection />
       <SkillsSection />
       <ExperienceSection />
